@@ -1,4 +1,4 @@
-
+let res = "";
 let firstNum = "";
 let secondNum = "";
 let sign = "";
@@ -91,16 +91,28 @@ equals.addEventListener("click", equalFunc);
 function equalFunc(){
     switch(sign){
         case"+":
-        result.textContent = Number(firstNum) + Number(secondNum);
+        res =Number(firstNum) + Number(secondNum)
+        result.textContent = res ;
+        firstNum = res;
+        secondNum ="";
         break;
         case"-":
-        result.textContent = Number(firstNum) - Number(secondNum);
+        res =Number(firstNum) - Number(secondNum)
+        result.textContent = res ;
+        firstNum = res;
+        secondNum ="";
         break;
         case"/":
-        result.textContent = Number(firstNum) / Number(secondNum);
+        res =Number(firstNum) / Number(secondNum)
+        result.textContent = res ;
+        firstNum = res;
+        secondNum ="";
         break;
         case"X":
-        result.textContent = Number(firstNum) * Number(secondNum);
+        res =Number(firstNum) * Number(secondNum)
+        result.textContent = res ;
+        firstNum = res;
+        secondNum ="";
         break;
     }
 }
