@@ -3,56 +3,30 @@ let firstNum = "";
 let secondNum = "";
 let sign = "";
 
+let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."]
+
 let result = document.querySelector(".result");
 let allBtn = document.querySelector(".buttons");
 
-
 // Цифры
-let nine = document.querySelector(".nine");
-nine.addEventListener("click", handler);
+allBtn.addEventListener("click", function (e){
 
-let eight = document.querySelector(".eight");
-eight.addEventListener("click", handler);
-
-let seven = document.querySelector(".seven");
-seven.addEventListener("click", handler);
-
-let six = document.querySelector(".six");
-six.addEventListener("click", handler);
-
-let five = document.querySelector(".five");
-five.addEventListener("click", handler);
-
-let four = document.querySelector(".four");
-four.addEventListener("click", handler);
-
-let three = document.querySelector(".three");
-three.addEventListener("click", handler);
-
-let two = document.querySelector(".two");
-two.addEventListener("click", handler);
-
-let one = document.querySelector(".one");
-one.addEventListener("click", handler);
-
-let zero = document.querySelector(".null");
-zero.addEventListener("click", handler);
-
-let point = document.querySelector(".point");
-point.addEventListener("click", handler);
-
-function handler() {
-    if (sign === "") {
-        firstNum += this.textContent;
-        result.textContent = firstNum;
-        // console.log(firstNum);
+    let key = e.target.textContent;
+    
+    if(numbers.includes(key))  
+   {
+         if (sign === "") {
+            firstNum += key;
+            result.textContent = firstNum;
+            // console.log(firstNum);
+        };
+        if (sign !== "") {
+            secondNum +=key;
+            result.textContent = secondNum
+            // console.log(secondNum);
+        };
     }
-    if (sign !== "") {
-        secondNum += this.textContent
-        result.textContent = secondNum
-        // console.log(secondNum);
-    }
-};
+})
 
 
 //Знаки + - / *
