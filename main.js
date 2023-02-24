@@ -9,19 +9,18 @@ let result = document.querySelector(".result");
 let allBtn = document.querySelector(".buttons");
 
 // Цифры
-allBtn.addEventListener("click", function (e){
+allBtn.addEventListener("click", function (e) {
 
     let key = e.target.textContent;
-    
-    if(numbers.includes(key))  
-   {
-         if (sign === "") {
+
+    if (numbers.includes(key)) {
+        if (sign === "") {
             firstNum += key;
             result.textContent = firstNum;
             // console.log(firstNum);
         };
         if (sign !== "") {
-            secondNum +=key;
+            secondNum += key;
             result.textContent = secondNum
             // console.log(secondNum);
         };
@@ -62,31 +61,43 @@ del.addEventListener("click", function () {
 // Знак равно
 let equals = document.querySelector(".equals");
 equals.addEventListener("click", equalFunc);
-function equalFunc(){
-    switch(sign){
-        case"+":
-        res =Number(firstNum) + Number(secondNum)
-        result.textContent = res ;
-        firstNum = res;
-        secondNum ="";
-        break;
-        case"-":
-        res =Number(firstNum) - Number(secondNum)
-        result.textContent = res ;
-        firstNum = res;
-        secondNum ="";
-        break;
-        case"/":
-        res =Number(firstNum) / Number(secondNum)
-        result.textContent = res ;
-        firstNum = res;
-        secondNum ="";
-        break;
-        case"X":
-        res =Number(firstNum) * Number(secondNum)
-        result.textContent = res ;
-        firstNum = res;
-        secondNum ="";
-        break;
+function equalFunc() {
+    switch (sign) {
+        case "+":
+            res = Number(firstNum) + Number(secondNum)
+            result.textContent = res;
+            firstNum = res;
+            secondNum = "";
+            break;
+        case "-":
+            res = Number(firstNum) - Number(secondNum)
+            result.textContent = res;
+            firstNum = res;
+            secondNum = "";
+            break;
+        case "/":
+            res = Number(firstNum) / Number(secondNum)
+            result.textContent = res;
+            firstNum = res;
+            secondNum = "";
+            break;
+        case "X":
+            res = Number(firstNum) * Number(secondNum)
+            result.textContent = res;
+            firstNum = res;
+            secondNum = "";
+            break;
     }
 }
+
+let night = document.querySelector("#checkbox");
+let wrapper = document.querySelector(".wrapper");
+let header = document.querySelector(".header");
+
+night.addEventListener("click", changeFunc)
+    function changeFunc(){
+      document.body.classList.toggle("night"); 
+      wrapper.classList.toggle("night-wrapper");
+      header.classList.toggle("night-header");
+      result.classList.toggle("night-result")
+    }

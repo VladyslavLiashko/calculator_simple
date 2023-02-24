@@ -13,7 +13,7 @@
 
 .result {
     text-align: right;
-    padding-top: 20%;
+    padding-top: 6%;
     padding-right: 3%;
     font-size: 30px;
 
@@ -69,4 +69,31 @@
 .orangeBTN:hover{
     background: #b87120;
     transition: 1s;
+}
+.night-block{
+    display: flex;
+    justify-content: center;
+}
+#checkbox{
+    border-radius: 30px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    height: 30px;
+    background-color: #FD8900;
+}
+
+/* night-mode */
+.night{
+    background-color: black;
+}
+.night-wrapper{
+    border: 2px solid #fff;
+}
+.night-header{
+    border-bottom: 1px solid #fff;
+}
+.night-result{
+    color: #fff;
 }
